@@ -5,6 +5,7 @@ interface Company {
   sector: string;
   description: string;
   type: string;
+  position: string;
 }
 
 const companies: Company[] = [
@@ -12,44 +13,57 @@ const companies: Company[] = [
   {
     name: "Mount Sinai",
     sector: "Healthcare",
-    description: "Leading academic medical center and healthcare system",
+    position: "IT Consultant",
+    description:
+      "Imaging and deployment of PCs, Active Directory configuration for Epic clinical operations",
     type: "Enterprise",
   },
   {
-    name: "Weill Cornell",
+    name: "Weill Cornell Medical",
     sector: "Healthcare",
-    description: "Premier medical school and healthcare institution",
+    position: "Senior Support Analyst",
+    description:
+      "IT support for 10,000+ users, built MERN app for network scanning, Electron/Vue.js desktop app",
     type: "Enterprise",
   },
-  // Finance
+  // News
   {
     name: "Fox Corporation",
-    sector: "Finance",
-    description: "Financial services and investment management",
+    sector: "News",
+    position: "Full Stack Cloud Engineer",
+    description:
+      "Developed web apps for Fox News, Fox Weather, Fox Sports with React.js, Node.js, AWS",
     type: "Enterprise",
   },
   {
-    name: "RVO",
-    sector: "Finance",
-    description: "Financial technology and services company",
+    name: "RVO Health",
+    sector: "Enterprise",
+    position: "Sr Full Stack Software Engineer",
+    description:
+      "React, Next.js, TypeScript, Node.js, Express, GraphQL, AWS, Azure, CommerceTools",
     type: "Enterprise",
   },
   // Tech
   {
-    name: "Portobel",
-    sector: "Tech",
-    description: "Innovative startup in technology solutions",
-    type: "Startup",
+    name: "Express Scripts",
+    sector: "Enterprise",
+    position: "Sr. Front End Engineer",
+    description:
+      "TDD, Agile, JavaScript to TypeScript refactoring, React components, API integration",
+    type: "Enterprise",
   },
   {
-    name: "Freelance Projects",
+    name: "Castro AI LLC",
     sector: "Tech",
-    description: "Various technology consulting and development projects",
+    position: "Freelance Consultant",
+    description:
+      "E-commerce solutions, WooCommerce to Shopify migration, multi-platform integrations",
     type: "Freelance",
   },
   {
     name: "ConneXions",
     sector: "Tech",
+    position: "Lead Developer",
     description: "Social app - Current working project",
     type: "Startup",
   },
@@ -58,8 +72,7 @@ const companies: Company[] = [
 const sectorColors = {
   Healthcare:
     "bg-blue-500/10 text-blue-700 border-blue-200 dark:bg-blue-500/20 dark:text-blue-300 dark:border-blue-800",
-  Finance:
-    "bg-green-500/10 text-green-700 border-green-200 dark:bg-green-500/20 dark:text-green-300 dark:border-green-800",
+  News: "bg-green-500/10 text-green-700 border-green-200 dark:bg-green-500/20 dark:text-green-300 dark:border-green-800",
   Tech: "bg-purple-500/10 text-purple-700 border-purple-200 dark:bg-purple-500/20 dark:text-purple-300 dark:border-purple-800",
 };
 
@@ -73,7 +86,7 @@ const typeColors = {
 };
 
 export function CompaniesSection() {
-  const sectors = ["Healthcare", "Finance", "Tech"];
+  const sectors = ["Healthcare", "News", "Tech"];
 
   return (
     <section className="py-16 bg-background">
@@ -85,7 +98,7 @@ export function CompaniesSection() {
               Companies I&apos;ve Worked With
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Experience across healthcare, finance, and technology sectors
+              Experience across healthcare, news, and technology sectors
             </p>
           </div>
 
@@ -139,8 +152,8 @@ export function CompaniesSection() {
                     <h3 className="text-xl font-semibold mb-2">
                       {company.name}
                     </h3>
-                    <p className="text-muted-foreground text-sm mb-3">
-                      {company.description}
+                    <p className="text-primary font-medium text-sm mb-2">
+                      {company.position}
                     </p>
                   </div>
                 </div>

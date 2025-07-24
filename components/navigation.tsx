@@ -1,13 +1,13 @@
-"use client";
+// "use client";
 import { ThemeToggle } from "./theme-toggle";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+// import { usePathname } from "next/navigation";
 
 export function Navigation() {
-  const pathname = usePathname();
+  // const pathname = usePathname();
 
-  const isActive = (path: string) => pathname === path;
+  // const isActive = (path: string) => pathname === path;
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -18,15 +18,15 @@ export function Navigation() {
 
         <div className="flex items-center space-x-6">
           <div className="hidden md:flex items-center space-x-6">
-            <Link
+            {/* <Link
               href="/"
               className={`text-sm font-medium transition-colors hover:text-primary ${
                 isActive("/") ? "text-primary" : "text-muted-foreground"
               }`}
             >
               Home
-            </Link>
-            <Link
+            </Link> */}
+            {/* <Link
               href="/blog"
               className={`text-sm font-medium transition-colors hover:text-primary ${
                 isActive("/blog") ? "text-primary" : "text-muted-foreground"
@@ -41,13 +41,13 @@ export function Navigation() {
               }`}
             >
               About
-            </Link>
+            </Link> */}
           </div>
 
           <ThemeToggle />
 
           <Button asChild size="sm" className="btn-primary">
-            <a href="#contact">Contact</a>
+            <a href="#cta">Let&apos;s Connect</a>
           </Button>
         </div>
       </div>

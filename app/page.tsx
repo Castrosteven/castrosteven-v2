@@ -1,9 +1,8 @@
-import { AboutSection } from "@/components/about-section";
-import { ContactSection } from "@/components/contact-section";
-import { FeaturedPosts } from "@/components/featured-posts";
+// import { FeaturedPosts } from "@/components/featured-posts";
 import { HeroSection } from "@/components/hero-sections";
 import { TechStack } from "@/components/tech-stack";
 import { CompaniesSection } from "@/components/companies-section";
+import { CTASection } from "@/components/cta-section";
 
 export default function Home() {
   return (
@@ -11,9 +10,7 @@ export default function Home() {
       <HeroSection />
       <TechStack />
       <CompaniesSection />
-      <AboutSection />
-      <FeaturedPosts />
-      <ContactSection />
+      <CTASection />
     </div>
   );
 }
