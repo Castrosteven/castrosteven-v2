@@ -26,7 +26,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Steven Castro - Lead Full Stack AI Cloud Engineer",
   description:
-    "Lead Full Stack AI Cloud Engineer with 10+ years of experience building scalable systems and leading high-performing engineering teams. Expert in React, Node.js, AWS, and enterprise software solutions.",
+    "Building scalable systems and leading high-performing engineering teams. 10+ years of experience crafting enterprise-grade software solutions.",
   keywords: [
     "Full Stack Engineer",
     "Cloud Engineer",
@@ -35,6 +35,7 @@ export const metadata: Metadata = {
     "AWS",
     "Software Engineer",
     "Tech Lead",
+    "AI Engineer",
   ],
   authors: [{ name: "Steven Castro" }],
   creator: "Steven Castro",
@@ -46,7 +47,7 @@ export const metadata: Metadata = {
     siteName: "Steven Castro Portfolio",
     images: [
       {
-        url: "/open-graph.png",
+        url: "https://castrosteven.com/open-graph.png",
         width: 1200,
         height: 630,
         alt: "Steven Castro - Lead Full Stack AI Cloud Engineer",
@@ -60,7 +61,7 @@ export const metadata: Metadata = {
     title: "Steven Castro - Lead Full Stack AI Cloud Engineer",
     description:
       "Building scalable systems and leading high-performing engineering teams. 10+ years of experience crafting enterprise-grade software solutions.",
-    images: ["/open-graph.png"],
+    images: ["https://castrosteven.com/open-graph.png"],
   },
   robots: {
     index: true,
