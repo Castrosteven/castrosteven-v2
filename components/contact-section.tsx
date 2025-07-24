@@ -1,6 +1,8 @@
 import { Mail, MessageSquare, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import Link from "next/link";
+import socialLinks from "@/lib/config";
 
 export function ContactSection() {
   return (
@@ -18,33 +20,39 @@ export function ContactSection() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
             <Card className="card-gradient p-6">
-              <CardContent className="text-center pt-4">
-                <Mail className="h-8 w-8 text-primary mx-auto mb-4" />
-                <h3 className="font-semibold mb-2">Email</h3>
-                <p className="text-sm text-muted-foreground">
-                  Direct communication for project inquiries
-                </p>
-              </CardContent>
+              <Link href={`mailto:${socialLinks.email}`} target="_blank">
+                <CardContent className="text-center pt-4">
+                  <Mail className="h-8 w-8 text-primary mx-auto mb-4" />
+                  <h3 className="font-semibold mb-2">Email</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Direct communication for project inquiries
+                  </p>
+                </CardContent>
+              </Link>
             </Card>
 
             <Card className="card-gradient p-6">
-              <CardContent className="text-center pt-4">
-                <MessageSquare className="h-8 w-8 text-primary mx-auto mb-4" />
-                <h3 className="font-semibold mb-2">LinkedIn</h3>
-                <p className="text-sm text-muted-foreground">
-                  Connect for professional networking
-                </p>
-              </CardContent>
+              <Link href={socialLinks.linkedin} target="_blank">
+                <CardContent className="text-center pt-4">
+                  <MessageSquare className="h-8 w-8 text-primary mx-auto mb-4" />
+                  <h3 className="font-semibold mb-2">LinkedIn</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Connect for professional networking
+                  </p>
+                </CardContent>
+              </Link>
             </Card>
 
             <Card className="card-gradient p-6">
-              <CardContent className="text-center pt-4">
-                <Calendar className="h-8 w-8 text-primary mx-auto mb-4" />
-                <h3 className="font-semibold mb-2">Schedule</h3>
-                <p className="text-sm text-muted-foreground">
-                  Book a time for detailed discussions
-                </p>
-              </CardContent>
+              <Link href={socialLinks.calendar} target="_blank">
+                <CardContent className="text-center pt-4">
+                  <Calendar className="h-8 w-8 text-primary mx-auto mb-4" />
+                  <h3 className="font-semibold mb-2">Schedule</h3>
+                  <p className="text-sm text-muted-foreground">
+                    Book a time for detailed discussions
+                  </p>
+                </CardContent>
+              </Link>
             </Card>
           </div>
 
@@ -57,13 +65,13 @@ export function ContactSection() {
             </Button>
 
             <Button variant="outline" size="lg" asChild>
-              <a
-                href="https://linkedin.com"
+              <Link
+                href={socialLinks.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Connect on LinkedIn
-              </a>
+              </Link>
             </Button>
           </div>
         </div>

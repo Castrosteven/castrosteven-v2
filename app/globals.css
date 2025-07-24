@@ -113,10 +113,131 @@
 }
 
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
+  :root {
+    /* Core Background & Text */
+    --background: 0 0% 100%;
+    --foreground: 220 13% 18%;
+    
+    /* Professional Blue Palette */
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Sophisticated Grays */
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 220 13% 18%;
+    
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+    
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 100%;
+    
+    /* Card & UI Elements */
+    --card: 0 0% 100%;
+    --card-foreground: 220 13% 18%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 13% 18%;
+    
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 217 91% 60%;
+    
+    /* Professional Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(217 91% 70%));
+    --gradient-hero: linear-gradient(135deg, hsl(220 13% 18%) 0%, hsl(217 91% 60%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(220 14% 98%) 100%);
+    
+    /* Modern Shadows */
+    --shadow-subtle: 0 1px 3px 0 hsl(220 13% 18% / 0.1), 0 1px 2px -1px hsl(220 13% 18% / 0.1);
+    --shadow-medium: 0 4px 6px -1px hsl(220 13% 18% / 0.1), 0 2px 4px -2px hsl(220 13% 18% / 0.1);
+    --shadow-large: 0 20px 25px -5px hsl(220 13% 18% / 0.1), 0 8px 10px -6px hsl(220 13% 18% / 0.1);
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --radius: 0.75rem;
+    
+    /* Typography Scale */
+    --font-heading: 'Inter', system-ui, sans-serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
   }
+
+  .dark {
+    /* Dark Theme */
+    --background: 220 13% 9%;
+    --foreground: 220 14% 96%;
+    
+    --primary: 217 91% 70%;
+    --primary-foreground: 220 13% 9%;
+    
+    --secondary: 220 13% 15%;
+    --secondary-foreground: 220 14% 96%;
+    
+    --muted: 220 13% 15%;
+    --muted-foreground: 220 9% 65%;
+    
+    --accent: 217 91% 70%;
+    --accent-foreground: 220 13% 9%;
+    
+    --card: 220 13% 11%;
+    --card-foreground: 220 14% 96%;
+    
+    --popover: 220 13% 11%;
+    --popover-foreground: 220 14% 96%;
+    
+    --border: 220 13% 18%;
+    --input: 220 13% 18%;
+    --ring: 217 91% 70%;
+    
+    /* Dark Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 70%), hsl(217 91% 80%));
+    --gradient-hero: linear-gradient(135deg, hsl(220 13% 9%) 0%, hsl(217 91% 30%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(220 13% 11%) 0%, hsl(220 13% 13%) 100%);
+    
+    /* Dark Shadows */
+    --shadow-subtle: 0 1px 3px 0 hsl(220 13% 0% / 0.3), 0 1px 2px -1px hsl(220 13% 0% / 0.3);
+    --shadow-medium: 0 4px 6px -1px hsl(220 13% 0% / 0.3), 0 2px 4px -2px hsl(220 13% 0% / 0.3);
+    --shadow-large: 0 20px 25px -5px hsl(220 13% 0% / 0.4), 0 8px 10px -6px hsl(220 13% 0% / 0.4);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-body);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    @apply font-semibold tracking-tight;
+  }
+  
+  /* Typography Scale */
+  .text-hero {
+    @apply text-4xl md:text-6xl font-bold tracking-tight leading-tight py-2;
+  }
+  
+  .text-large {
+    @apply text-xl md:text-2xl;
+  }
+  
+  /* Custom Components */
+  .card-gradient {
+    background: var(--gradient-card);
+    box-shadow: var(--shadow-medium);
+  }
+  
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+  
+  .btn-primary {
+    background: var(--gradient-primary);
+    @apply text-primary-foreground hover:opacity-90 transition-opacity;
   }
 }
